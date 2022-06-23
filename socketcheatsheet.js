@@ -1,7 +1,7 @@
 
 io.on('connect', onConnect);
 
-function onConnect(socket){
+function onConnect(socket) {
 
   // sending to the client
   socket.emit('hello', 'can you hear me?', 1, 2, 'abc');
@@ -31,7 +31,7 @@ function onConnect(socket){
   // named `socket.id` but the sender. Please use the classic `socket.emit()` instead.
 
   // sending with acknowledgement
-  socket.emit('question', 'do you think so?', function (answer) {});
+  socket.emit('question', 'do you think so?', function (answer) { });
 
   // sending without compression
   socket.compress(false).emit('uncompressed', "that's rough");
