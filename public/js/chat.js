@@ -1,8 +1,8 @@
-var socket = io();
-var messages = document.getElementById("messages");
+const socket = io();
+const messages = document.getElementById("messages");
 
-(function() {
-  $("form").submit(function(e) {
+(function () {
+  $("form").submit(function (e) {
     let li = document.createElement("li");
     e.preventDefault(); // prevents page reloading
     socket.emit("chat message", $("#message").val());
@@ -27,7 +27,7 @@ var messages = document.getElementById("messages");
 })();
 
 // fetching initial chat messages from the database
-(function() {
+(function () {
   fetch("/chats")
     .then(data => {
       return data.json();
